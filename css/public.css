@@ -111,6 +111,9 @@ h3.menu-item-title {
   font-size: .9em;
   font-style: italic;
 }
+.reg-form input{
+  color: #000;  
+}
 /* END SINGLE CATEGORY PAGE */
 
 

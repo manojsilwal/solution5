@@ -1,0 +1,16 @@
+<div>
+
+		<div ng-hide="ctrl.empty">
+			<h1>{{ctrl.user.fname+" "+ctrl.user.lname}}</h1>
+			<p>Email : {{" "+ctrl.user.email}}</p>
+			<p>Phone : {{" "+ctrl.user.phone}}</p><br/>
+			<h3>Fav Item : </h3>
+			<p>Title : {{ctrl.item.name}}</p>
+			<img src="images/menu/{{ctrl.item.category_short_name}}/{{ctrl.item.category_short_name}}.jpg">
+			<p>Description : {{ctrl.item.description}}</p>
+		</div>
+		<div ng-show="ctrl.empty">
+			<p>Not Signed up yet. <a ui-sref="public.signup">Sign Up Now</a></p>
+		</div>
+	</li>
+</div>
