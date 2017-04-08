@@ -1,0 +1,45 @@
+<div>
+	<form class="reg-form" name="formName" novalidate>
+		<input type="text" name="fname" required placeholder="first name" ng-model="ctrl.user.fname" >
+		<span 
+			ng-if="formName.fname.$error.required && formName.fname.$touched">
+			first name is required
+		</span><br/>
+
+		<input type="text" name="lname" required placeholder="last name" ng-model="ctrl.user.lname" >
+		<span 
+			ng-if="formName.lname.$error.required && formName.lname.$touched">
+			last name is required
+		</span><br/>
+
+		<input type="email" name="email" required placeholder="email" ng-model="ctrl.user.email">
+		<span 
+			ng-if="formName.email.$invalid && formName.email.$touched">
+			email must be valid format: handle@domain
+		</span><br/>
+
+		<input type="phone" name="phone"  
+		placeholder="phone ###-###-####" pattern="(\d{3})-(\d{3})-(\d{4})" ng-model="ctrl.user.phone">
+		<span 
+			ng-if="formName.phone.$invalid && formName.phone.$touched">
+			phone number should be in valid format: phone ###-###-####
+		</span><br/>
+
+		<input type="text" name="favItem" placeholder="Fav Item Short_Name" required ng-model="ctrl.user.fav_item">
+		<span 
+			ng-if="formName.favItem.$error.required && formName.favItem.$touched">
+			must be filled
+		</span><br/>
+		<button 
+			ng-disabled="formName.$invalid" ng-click="ctrl.submit();">
+			submit
+		</button>
+		<span ng-if="ctrl.error">
+			<p>no such menu number exist, choose another</p>
+		</span>
+
+		<span ng-if="ctrl.saved">
+			<p>Your information has been saved</p>
+		</span>
+	</form>
+</div>
